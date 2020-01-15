@@ -8,8 +8,14 @@ A detailed security advisory is currently work in progress. This section will be
 
 ## Contact
 
-Author of MZ-20-02 and its PoC exploits and tools is Thorsten Schroeder (https://github.com/devio or https://twitter.com/__ths__). If you have any questions, don't hesitate to contact me directly.
+Author of MZ-20-02, its PoC exploits and tools is Thorsten Schroeder (https://github.com/devio). If you have any questions, don't hesitate to contact me directly.
 This software is released under the Beer-Ware-License (see below).
+
+* [Thorsten Schroeder @ twitter](https://twitter.com/__ths__ "ths on twitter")
+* [modzero home](https://www.modzero.com "modzero")
+* [modzero @ twitter](https://twitter.com/mod0 "modzero on twitter")
+* [modzero @ github](https://github.com/modzero/ "modzero on github")
+
 
 ## License
 
