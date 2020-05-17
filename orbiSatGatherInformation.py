@@ -24,8 +24,9 @@ import socket
 import sys
 from netgear import OrbiSoap
 
+demo_mode = False
 
-def get_wifi_info(hostname, session=None, redacted=False):
+def get_wifi_info(hostname, session=None, redacted=True):
     host = socket.gethostbyname(hostname)
 
     soap = OrbiSoap(host, session=session)
@@ -63,7 +64,7 @@ def get_wifi_info(hostname, session=None, redacted=False):
     guest_psk = soap.xml_get(xml_guestnet_info, "NewKey")
     guest_mode = soap.xml_get(xml_guestnet_info, "NewSecurityMode")
 
-    if redacted:
+    if redacted and not demo_mode:
         adm_psk = adm_psk[0:4] + "[REDACTED]"
         guest_psk = guest_psk[0:4] + "[REDACTED]"
 

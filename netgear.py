@@ -34,6 +34,7 @@ from getmac import get_mac_address
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
+demo_mode = False
 
 class OrbiSoap:
 
@@ -86,7 +87,10 @@ class OrbiSoap:
         local_ifs = self.get_interfaces()
 
         for _ in local_ifs:
-            print("[{0}] {1:16}: {2} ({3})".format(_['idx'], _['ip'], _['mac'], _['if']))
+            if demo_mode:
+                print("[{0}] {1:16}: {2} ({3})".format(_['idx'], '.'.join(_['ip'].split('.')[0:2]) + ".XXX.XXX", _['mac'][0:9] + "XX:XX:XX", _['if']))
+            else:
+                print("[{0}] {1:16}: {2} ({3})".format(_['idx'], _['ip'], _['mac'], _['if']))
 
         sel = input("[+] Select Interface: ")
 
@@ -100,7 +104,10 @@ class OrbiSoap:
             if sel == i['idx']:
                 local_mac = i['mac']
 
-        print("[*] Query Orbi Satellite at {0} via local interface {1}".format(self.host, local_mac))
+        if demo_mode:
+            print("[*] Query Orbi Satellite at {0} via local interface {1}".format(self.host, local_mac[0:9] + "XX:XX:XX"))
+        else:
+            print("[*] Query Orbi Satellite at {0} via local interface {1}".format(self.host, local_mac))
 
         remote_mac = get_mac_address(ip=self.host, network_request=True)
 
