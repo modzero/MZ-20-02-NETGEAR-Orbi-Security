@@ -4,7 +4,12 @@ NETGEAR Orbi Pro Mesh WiFi System - Proof of Concept Exploits and additional inf
 
 ## General Information
 
-A detailed security advisory is currently work in progress. This section will be updated.
+A detailed security advisory is available at https://www.modzero.com/advisories/MZ-20-02-Netgear-Orbi-Pro-Security.txt
+A screencast video of the setup and Proof-of-Concept exploit is available here: https://youtu.be/bCJMCuiCbr4
+
+## CVE IDs
+
+CVE-2020-11549, CVE-2020-11550, CVE-2020-11551
 
 ## Contact
 
